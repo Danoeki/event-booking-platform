@@ -19,7 +19,10 @@ const CartPage = () => {
     setCart(getCart());
   };
 
-  const totalPrice = cart.reduce((total, item) => total + item.event.price * item.tickets, 0);
+  // Calcul dynamique du total des prix
+  const totalPrice = cart.reduce((total, item) => {
+    return total + item.event.price * item.tickets;
+  }, 0);
 
   // Vérifiez si le panier est vide
   if (cart.length === 0) {
@@ -37,7 +40,7 @@ const CartPage = () => {
           onUpdate={handleUpdate}
         />
       ))}
-      <h3>Total: ${totalPrice}</h3>
+      <h3>Total: ${totalPrice.toFixed(2)}</h3>
     </div>
   );
 };
