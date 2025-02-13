@@ -21,11 +21,21 @@ const CartPage = () => {
 
   const totalPrice = cart.reduce((total, item) => total + item.event.price * item.tickets, 0);
 
+  // Vérifiez si le panier est vide
+  if (cart.length === 0) {
+    return <div>Votre panier est vide.</div>;
+  }
+
   return (
     <div>
       <h2>Panier</h2>
       {cart.map(item => (
-        <CartItem key={item.event.id} item={item} onRemove={handleRemove} onUpdate={handleUpdate} />
+        <CartItem
+          key={item.event.id}
+          item={item}
+          onRemove={handleRemove}
+          onUpdate={handleUpdate}
+        />
       ))}
       <h3>Total: ${totalPrice}</h3>
     </div>
