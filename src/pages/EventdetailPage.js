@@ -18,14 +18,28 @@ const EventDetailPage = () => {
   }
 
   return (
-    <div>
+    <div className="event-detail">
       <img src={event.image} alt={event.title} />
-      <h2>{event.title}</h2>
-      <p>{event.description}</p>
-      <p>Date: {event.date}</p>
-      <p>Lieu: {event.location}</p>
-      <p>Organisateur: {event.organizer}</p>
-      <EventForm event={event} onBook={handleBook} />
+      <div className="event-detail-info">
+        <h2>{event.title}</h2>
+        <p>{event.description}</p>
+        <div className="event-meta">
+          <i className="fas fa-calendar-alt"></i> {event.date}
+        </div>
+        <div className="event-meta">
+          <i className="fas fa-map-marker-alt"></i> {event.location}
+        </div>
+        <div className="event-meta">
+          <i className="fas fa-user"></i> {event.organizer}
+        </div>
+        <div className="event-meta">
+          <i className="fas fa-tag"></i> Prix: ${event.price}
+        </div>
+      </div>
+      <div className="event-detail-form">
+        <h3>Réserver des billets</h3>
+        <EventForm event={event} onBook={handleBook} />
+      </div>
     </div>
   );
 };
