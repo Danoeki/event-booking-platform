@@ -1,0 +1,123 @@
+[
+    {
+      "id": "1",
+      "title": "Concert de Rock",
+      "date": "2023-10-01",
+      "location": "Paris",
+      "price": 50,
+      "image": "rock-concert.jpg",
+      "description": "Un concert de rock incroyable avec des artistes internationaux.",
+      "organizer": "Rock Events",
+      "category": "concert",
+      "availableTickets": 100
+    },
+    {
+      "id": "2",
+      "title": "Conférence sur l'Intelligence Artificielle",
+      "date": "2023-11-15",
+      "location": "Lyon",
+      "price": 30,
+      "image": "ai-conference.jpg",
+      "description": "Une conférence sur les dernières avancées en intelligence artificielle.",
+      "organizer": "Tech Innovators",
+      "category": "conférence",
+      "availableTickets": 150
+    },
+    {
+      "id": "3",
+      "title": "Atelier de Cuisine Italienne",
+      "date": "2023-12-05",
+      "location": "Marseille",
+      "price": 45,
+      "image": "cooking-workshop.jpg",
+      "description": "Apprenez à cuisiner des plats italiens traditionnels avec un chef renommé.",
+      "organizer": "Culinary Masters",
+      "category": "atelier",
+      "availableTickets": 20
+    },
+    {
+      "id": "4",
+      "title": "Festival de Jazz",
+      "date": "2023-10-20",
+      "location": "Bordeaux",
+      "price": 60,
+      "image": "jazz-festival.jpg",
+      "description": "Un festival de jazz avec des musiciens de renommée mondiale.",
+      "organizer": "Jazz Lovers",
+      "category": "concert",
+      "availableTickets": 200
+    },
+    {
+      "id": "5",
+      "title": "Séminaire sur le Développement Durable",
+      "date": "2023-11-30",
+      "location": "Nantes",
+      "price": 25,
+      "image": "sustainability-seminar.jpg",
+      "description": "Un séminaire sur les pratiques de développement durable dans les entreprises.",
+      "organizer": "Green Initiatives",
+      "category": "conférence",
+      "availableTickets": 80
+    },
+    {
+      "id": "6",
+      "title": "Exposition d'Art Contemporain",
+      "date": "2023-12-10",
+      "location": "Strasbourg",
+      "price": 15,
+      "image": "art-exhibition.jpg",
+      "description": "Une exposition présentant les œuvres d'artistes contemporains.",
+      "organizer": "Art Gallery",
+      "category": "exposition",
+      "availableTickets": 50
+    },
+    {
+      "id": "7",
+      "title": "Course de 5km pour la Charité",
+      "date": "2023-10-10",
+      "location": "Toulouse",
+      "price": 10,
+      "image": "charity-run.jpg",
+      "description": "Participez à une course de 5km pour soutenir une cause caritative.",
+      "organizer": "Charity Runners",
+      "category": "sport",
+      "availableTickets": 300
+    },
+    {
+      "id": "8",
+      "title": "Atelier de Photographie",
+      "date": "2023-11-25",
+      "location": "Lille",
+      "price": 35,
+      "image": "photography-workshop.jpg",
+      "description": "Apprenez les techniques de base de la photographie avec un professionnel.",
+      "organizer": "Photo Experts",
+      "category": "atelier",
+      "availableTickets": 15
+    },
+    {
+      "id": "9",
+      "title": "Conférence sur l'Entrepreneuriat",
+      "date": "2023-12-01",
+      "location": "Rennes",
+      "price": 40,
+      "image": "entrepreneurship-conference.jpg",
+      "description": "Une conférence sur les défis et opportunités de l'entrepreneuriat.",
+      "organizer": "Business Leaders",
+      "category": "conférence",
+      "availableTickets": 120
+    },
+    {
+      "id": "10",
+      "title": "Soirée de Dégustation de Vins",
+      "date": "2023-10-15",
+      "location": "Dijon",
+      "price": 55,
+      "image": "wine-tasting.jpg",
+      "description": "Dégustez une sélection de vins fins avec des experts en œnologie.",
+      "organizer": "Wine Connoisseurs",
+      "category": "dégustation",
+      "availableTickets": 40
+    }
+  ]
+  
