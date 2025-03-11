@@ -60,7 +60,7 @@ header nav a::after {
 }
 
 /* Cartes d'événements */
-.event-card {
+/*.event-card {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -68,11 +68,6 @@ header nav a::after {
   margin-bottom: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
   animation: fadeInUp 0.6s ease-out;
-}
-
-.event-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .event-card img {
@@ -108,6 +103,63 @@ header nav a::after {
 
 .event-card a:hover {
   background-color: #45a049;
+}*/
+
+.event-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.6s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-image {
+  width: 300px; /* ajustez cette valeur pour obtenir la largeur souhaitée */
+  height: 200px; /* ajustez cette valeur pour obtenir la hauteur souhaitée */
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou 'contain' si vous préférez que l'image soit entièrement visible */
+}
+
+.event-info {
+  width: 60%;
+}
+.event-card h3 {
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 1.6em;
+  color: #495057;
+}
+.event-card p {
+  margin: 5px 0;
+  padding: 0 20px;
+  font-size: 1em;
+  color: #6c757d;
+}
+
+.event-card a {
+  display: inline-block;
+  margin: 15px 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.event-button {
+  width: 15%;
+  text-align: right;
 }
 
 /* Filtres */
@@ -186,6 +238,7 @@ header nav a::after {
 .cart-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .cart-item h3 {
@@ -285,10 +338,6 @@ header nav a::after {
   transition: transform 0.3s;
 }
 
-.event-detail img:hover {
-  transform: scale(1.05);
-}
-
 .event-detail-info {
   flex: 1;
   display: flex;
@@ -327,11 +376,6 @@ header nav a::after {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.event-detail-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .event-detail-form h3 {

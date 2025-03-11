@@ -14,7 +14,15 @@ const HomePage = () => {
     } else if (type === 'category') {
       filtered = filtered.filter(event => event.category === value);
     } else if (type === 'sort') {
-      filtered.sort((a, b) => (value === 'price_asc' ? a.price - b.price : b.price - a.price));
+      if (value === 'date_asc') {
+        filtered = filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+      } else if (value === 'date_desc') {
+        filtered = filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+      } else if (value === 'price_asc') {
+        filtered = filtered.sort((a, b) => a.price - b.price);
+      } else if (value === 'price_desc') {
+        filtered = filtered.sort((a, b) => b.price - a.price);
+      }
     }
     setFilteredEvents(filtered);
   };

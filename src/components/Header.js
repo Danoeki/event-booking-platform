@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header>
-      <h1>Plateforme de Réservation d'Événements</h1>
+      <h1>ResEvents</h1>
       <nav>
-        <Link to="/">Accueil</Link>
-        <Link to="/cart">Panier</Link>
+        <Link to="/">
+          <i className="fas fa-home fa-lg"></i>
+        </Link>
+        <Link to="/cart">
+          <i className="fas fa-shopping-cart fa-lg"></i>
+        </Link>
       </nav>
     </header>
   );

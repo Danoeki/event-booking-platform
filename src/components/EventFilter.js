@@ -6,12 +6,18 @@ const EventFilter = ({ onFilterChange }) => {
       <input type="text" placeholder="Rechercher..." onChange={(e) => onFilterChange('search', e.target.value)} />
       <select onChange={(e) => onFilterChange('category', e.target.value)}>
         <option value="">Toutes catégories</option>
+        <option value="atelier">Atelier</option>
         <option value="concert">Concert</option>
-        <option value="conference">Conférence</option>
+        <option value="conférence">Conférence</option>
+        <option value="dégustation">Dégustation</option>
+        <option value="exposition">Exposition</option>
+        <option value="sport">Sport</option>
         {/* Ajoutez d'autres catégories ici */}
       </select>
       <select onChange={(e) => onFilterChange('sort', e.target.value)}>
         <option value="">Trier par</option>
+        <option value="date_asc">Date croissante</option>
+        <option value="date_desc">Date décroissante</option>
         <option value="price_asc">Prix croissant</option>
         <option value="price_desc">Prix décroissant</option>
       </select>
