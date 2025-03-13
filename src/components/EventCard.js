@@ -4,14 +4,6 @@ import moment from 'moment';
 
 const EventCard = ({ event }) => {
   return (
-    /*<div className="event-card">
-      <img src={require(`../assets/${event.image}`)} alt={event.title} />
-      <h3>{event.title}</h3>
-      <p>{moment(event.date).format('DD/MM/YYYY')}</p>
-      <p>{event.location}</p>
-      <p>{event.price}€</p>
-      <Link to={`/event/${event.id}`}>Voir plus</Link>
-    </div>*/
     <div className="event-card">
       <div className="event-image">
         <img src={require(`../assets/${event.image}`)} alt={event.title} />

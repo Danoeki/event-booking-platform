@@ -60,51 +60,6 @@ header nav a::after {
 }
 
 /* Cartes d'événements */
-/*.event-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin-bottom: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.event-card img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #eee;
-}
-
-.event-card h3 {
-  margin: 15px 0;
-  padding: 0 20px;
-  font-size: 1.6em;
-  color: #495057;
-}
-
-.event-card p {
-  margin: 5px 0;
-  padding: 0 20px;
-  font-size: 1em;
-  color: #6c757d;
-}
-
-.event-card a {
-  display: inline-block;
-  margin: 15px 20px;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.event-card a:hover {
-  background-color: #45a049;
-}*/
-
 .event-card {
   background-color: #fff;
   border-radius: 10px;
@@ -160,6 +115,10 @@ header nav a::after {
 .event-button {
   width: 15%;
   text-align: right;
+}
+
+.event-card a:hover {
+  background-color: #45a049;
 }
 
 /* Filtres */
@@ -229,28 +188,39 @@ header nav a::after {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  overflow: hidden;
   margin-bottom: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
   animation: fadeInUp 0.6s ease-out;
-}
-
-.cart-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cart-item h3 {
-  margin-top: 0;
-  font-size: 1.5em;
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 1.6em;
   color: #495057;
+}
+
+.cart-item h3:hover {
+  cursor: pointer;
+  color: #45a049;
+}
+
+.cart-item p {
+  margin: 5px 0;
+  padding: 0 20px;
+  font-size: 1em;
+  color: #6c757d;
 }
 
 .cart-item button {
   background-color: #f44336;
   color: white;
   border: none;
+  margin: 15px 20px;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -262,12 +232,13 @@ header nav a::after {
 }
 
 .cart-item input {
-  width: 60px;
+  width: 80px;
   padding: 5px;
-  margin-left: 10px;
+  margin: 0px 20px;
   border: 1px solid #ced4da;
   border-radius: 5px;
   transition: border-color 0.3s;
+  border: 2px solid #4CAF50;
 }
 
 .cart-item input:focus {

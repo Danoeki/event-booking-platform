@@ -31,7 +31,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <h2>Panier</h2>
+      <h2>Votre panier</h2>
       {cart.map(item => (
         <CartItem
           key={item.event.id}
