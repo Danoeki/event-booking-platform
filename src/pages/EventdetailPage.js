@@ -59,7 +59,10 @@ const EventDetailPage = () => {
         ) : (
           <div>
             {new Date(event.date) < new Date() ? (
-              <h3>Les réservations ne sont plus disponibles pour cet événement</h3>
+              <div>
+                <h3>Les réservations ne sont plus disponibles pour cet événement</h3>
+                <button onClick={() => navigate(`/`)}>Voir les autres événements</button>
+              </div>
             ) : (
               <div>
                 <h3>Réserver des billets</h3>

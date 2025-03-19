@@ -382,18 +382,6 @@ header nav a::after {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .event-filter {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .event-card {
-    margin-bottom: 15px;
-  }
-}
-
 
 /* Style pour la page de détails */
 .event-detail {
@@ -463,12 +451,19 @@ header nav a::after {
 
 .event-detail-form input,
 .event-detail-form button {
-  width: 100%;
   padding: 12px;
   margin: 10px 0;
   border: 1px solid #ced4da;
   border-radius: 5px;
   transition: border-color 0.3s;
+}
+
+.event-detail-form button {
+  width: 100%;
+}
+
+.event-detail-form input {
+  width: 94%;
 }
 
 .event-detail-form input:focus {
@@ -488,18 +483,7 @@ header nav a::after {
   background-color: #45a049;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .event-detail {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .event-detail-info,
-  .event-detail-form {
-    width: 100%;
-  }
-}
 
 .event-detail-info .event-meta {
   display: flex;
@@ -512,4 +496,127 @@ header nav a::after {
 .event-detail-info .event-meta i {
   margin-right: 10px;
   color: #4CAF50;
+}
+
+
+/* Adaptation pour les écrans de largeur maximale de 767px */
+@media (max-width: 768px) {
+  .event-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-detail-info,
+  .event-detail-form {
+    width: 100%;
+  }
+  header {
+    padding: 10px;
+  }
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .event-info {
+    width: 100%;
+  }
+
+  .event-filter {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .event-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-detail-info,
+  .event-detail-form {
+    width: 95%;
+  }
+  .event-button {
+    align-items: center;
+    width: 100%;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+  }
+  
+  .cart-item h3 {
+    align-self: flex-start; 
+    margin-bottom: 10px; 
+  }
+
+  .counter {
+    margin-bottom: 20px;
+  }
+
+
+}
+
+/* Adaptation pour les écrans de largeur maximale de 480px */
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header nav a {
+    font-size: 1em;
+    margin: 0 10px;
+  }
+
+  .event-card {
+    padding: 10px;
+  }
+
+  .event-card h3 {
+    font-size: 1.4em;
+  }
+
+  .event-card p {
+    font-size: 0.9em;
+  }
+
+  .event-card a {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .event-detail-info h2 {
+    font-size: 1.8em;
+  }
+
+  .event-detail-info p {
+    font-size: 1em;
+  }
+
+  .event-detail-form h3 {
+    font-size: 1.5em;
+  }
+
+  .event-detail-form input,
+  .event-detail-form button {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+  .event-detail-form {
+    width: 90%;
+  }
+  .event-button {
+    align-items: center;
+    width: 100%;
+  }
 }
