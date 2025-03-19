@@ -12,9 +12,12 @@ const EventDetailPage = () => {
 
   const navigate = useNavigate();
 
+  // Récupération de l'ID de l'événement dans l'URL
   const { id } = useParams();
+  // Récupération de l'événement correspondant à l'ID
   const event = eventsData.find(event => event.id === id);
 
+  // Fonction pour gérer la réservation d'un événement
   const handleBook = (formData) => {
     addToCart({ event, ...formData });
     setCart(getCart());
@@ -22,6 +25,7 @@ const EventDetailPage = () => {
     window.dispatchEvent(new Event('storage'));
   };
 
+  // Utilisation de la fonction useEffect pour mettre à jour le panier lors du chargement de la page
   useEffect(() => {
     const updateCartSize = () => {
       setCart(getCart());

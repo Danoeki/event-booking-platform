@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import EventCard from '../components/EventCard';
 import EventFilter from '../components/EventFilter';
-import eventsData from '../data/events.json'; // Assurez-vous d'avoir un fichier JSON avec les données des événements
+import eventsData from '../data/events.json';
 
 const HomePage = () => {
   const [events, setEvents] = useState(eventsData);
@@ -10,15 +10,17 @@ const HomePage = () => {
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
 
+  // Fonction pour gérer les changements de filtres
   const onFilterChange = (type, value) => handleFilterChange(type, value);
 
+  // Fonction pour appliquer les filtres aux événements
   const handleFilterChange = (type, value) => {
     if (type === 'reset') {
       // Réinitialiser les filtres
       setFilteredEvents(eventsData);
     } else {
-      // Mettre à jour les filtres comme avant
       let filtered = [...events];
+      // Appliquer les filtres selon le type et la valeur
       if (type === 'search') {
         filtered = filtered.filter(event => event.title.toLowerCase().includes(value.toLowerCase()));
       } else if (type === 'category') {
@@ -54,6 +56,7 @@ const HomePage = () => {
           filtered = filtered.sort((a, b) => b.price - a.price);
         }
       }
+      // Mettre à jour l'état des événements filtrés
       setFilteredEvents(filtered);
     }
   };

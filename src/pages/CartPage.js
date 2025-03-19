@@ -9,17 +9,20 @@ const CartPage = () => {
 
   const navigate = useNavigate();
 
+  // Utilisation de la fonction useEffect pour mettre à jour le panier lors du chargement de la page
   useEffect(() => {
     setCart(getCart());
     setCartSize(cart.length);
   }, []);
 
+  // Fonction pour gérer la suppression d'une réservation
   const handleRemove = (eventId) => {
     removeFromCart(eventId);
     setCart(getCart());
     setCartSize(cart.length);
   };
 
+  // Fonction pour gérer la mise à jour du nombre de places d'une réservation
   const handleUpdate = (eventId, tickets) => {
     updateCart(eventId, tickets);
     setCart(getCart());
@@ -41,6 +44,7 @@ const CartPage = () => {
     );
   }
 
+  // Affichage du contenu du panier
   return (
     <div>
       <h2>Votre panier</h2>
