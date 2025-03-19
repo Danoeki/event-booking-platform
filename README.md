@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# ResEvents - Plateforme de Réservation d'Événements
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+ResEvents est une plateforme web permettant aux utilisateurs de découvrir, filtrer et réserver des événements. Les utilisateurs peuvent consulter les détails des événements, les ajouter à leur panier et finaliser leurs réservations.
 
-## Available Scripts
+## Fonctionnalités
+- **Liste des événements** : Affichage des événements disponibles avec des informations telles que le titre, la date, le lieu et le prix.
+- **Filtres avancés** : Recherche par mot-clé, catégorie, date (passée ou future) et tri par prix.
+- **Détails des événements** : Consultation des informations détaillées d'un événement, y compris l'organisateur, la description et les places disponibles.
+- **Réservation** : Ajout d'événements au panier avec le nombre de billets souhaités.
+- **Gestion du panier** : Modification ou suppression des réservations dans le panier.
+- **Calcul du total** : Affichage dynamique du prix total des réservations.
 
-In the project directory, you can run:
+## Fonctionnalités non terminées
+- **Bonus** : Le bonus n'a pas été effectué, mais le reste des fonctionnalités sont présentes.
 
-### `npm start`
+## Technologies utilisées
+- **Frontend** : React.js
+- **Routing** : React Router
+- **Gestion des données** : LocalStorage pour le panier
+- **Styling** : CSS personnalisé
+- **Bibliothèques tierces** :
+  - `moment` pour la gestion des dates
+  - `@fortawesome/fontawesome-free` pour les icônes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation et exécution
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prérequis
+- Node.js (version 14 ou supérieure)
+- npm ou yarn
 
-### `npm test`
+### Étapes
+1. Clonez le dépôt :
+   ```bash
+   git clone <URL_DU_DEPOT>
+   cd event-booking-platform
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Installez les dépendances :
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. Lancez le projet en mode développement :
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Ouvrez votre navigateur à l'adresse suivante :
+   ```
+   http://localhost:3000
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Structure du projet
+- **`src/components`** : Composants réutilisables comme `Header`, `EventCard`, `EventForm`, etc.
+- **`src/pages`** : Pages principales comme `HomePage`, `EventDetailPage`, et `CartPage`.
+- **`src/services`** : Services pour la gestion du panier via LocalStorage.
+- **`src/data`** : Données statiques des événements.
+- **`public`** : Fichiers publics comme `index.html`, `robots.txt`, et `manifest.json`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Scripts disponibles
+- `npm start` : Lance l'application en mode développement.
+- `npm build` : Génère une version optimisée pour la production.
+- `npm test` : Lance les tests unitaires.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Auteurs
+Ce projet a été réalisé dans le cadre d'un projet scolaire par **Noémie Danielou**, **Lou-Ann Meriot**, **Jules Dubayle**.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licence
+Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, de le modifier et de le distribuer.
