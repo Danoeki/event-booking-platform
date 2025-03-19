@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import EventForm from '../components/EventForm';
 import eventsData from '../data/events.json';
@@ -18,8 +18,16 @@ const EventDetailPage = () => {
   const handleBook = (formData) => {
     addToCart({ event, ...formData });
     setCart(getCart());
-    alert('Réservation effectuée avec succès!');
+    alert('Réservation effectuée avec succès !');
+    window.dispatchEvent(new Event('storage'));
   };
+
+  useEffect(() => {
+    const updateCartSize = () => {
+      setCart(getCart());
+    };
+    updateCartSize();
+  }, []);
 
   if (!event) {
     return <div>Événement non trouvé</div>;

@@ -1,22 +1,23 @@
 // src/components/Header.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getCart, removeFromCart } from '../services/localStorageService';
+import { getCart } from '../services/localStorageService';
 
 const Header = () => {
-  const [cart, setCart] = useState(getCart());
-  const [cartSize, setCartSize] = useState(cart.length);
+  const [cartSize, setCartSize] = useState(getCart().length);
 
   useEffect(() => {
-    const cart = getCart();
-    setCartSize(cart.length);
+    const updateCartSize = () => {
+      setCartSize(getCart().length);
+    };
+    updateCartSize();
   }, []);
 
-  const handleRemove = (eventId) => {
-    removeFromCart(eventId);
-    setCartSize(getCart().length);
-  };
-
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setCartSize(getCart().length);
+    });
+  }, []);
 
   return (
     <header>
@@ -33,7 +34,7 @@ const Header = () => {
         <Link to="/cart">
           <i className="fas fa-shopping-cart fa-lg"></i>
           {cartSize > 0 && (
-            <span className="cart-badge">{cartSize}</span>
+            <span className="cart-badge">●</span>
           )}
         </Link>
       </nav>

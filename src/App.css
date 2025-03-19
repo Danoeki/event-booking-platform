@@ -250,12 +250,12 @@ header nav a::after {
 .cart-badge {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 50%; /* arrondir les coins */
-  padding: 2px 5px; /* espace autour du texte */
-  font-size: 12px; /* taille du texte */
-  position: absolute; /* positionner la pastille par rapport à l'icône */
-  top: -5px; /* positionner la pastille au-dessus de l'icône */
-  right: -5px; /* positionner la pastille à droite de l'icône */
+  border-radius: 100%;
+  padding: 2px 5px;
+  font-size: 8px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }
 
 .cart-item {

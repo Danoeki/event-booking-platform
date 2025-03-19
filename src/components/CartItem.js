@@ -21,6 +21,7 @@ const CartItem = ({ item, onRemove, onUpdate }) => {
         <button onClick={(e) => {
           e.stopPropagation();
           onRemove(item.event.id);
+          window.dispatchEvent(new Event('storage'));
         }}>Supprimer</button>
         <div className="counter">
           <span className="minus" onClick={() => item.tickets > 1 && onUpdate(item.event.id, item.tickets - 1)}>-</span>
