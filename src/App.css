@@ -1,6 +1,8 @@
 /* Styles globaux */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f8f9fa;
@@ -26,18 +28,31 @@ header {
   animation: slideDown 0.5s ease-out;
 }
 
+header a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 15px;
+}
+
 header h1 {
   margin: 0;
   font-size: 1.8em;
 }
 
 header nav a {
-  color: white;
-  text-decoration: none;
   font-size: 1.2em;
   margin: 0 15px;
   position: relative;
-  transition: color 0.3s;
 }
 
 header nav a:hover {
@@ -114,7 +129,9 @@ header nav a::after {
 
 .event-button {
   width: 15%;
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .event-card a:hover {
@@ -123,6 +140,7 @@ header nav a::after {
 
 /* Filtres */
 .event-filter {
+  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -130,7 +148,15 @@ header nav a::after {
   flex-wrap: wrap;
 }
 
-.event-filter input,
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: calc(100% - 25px);
+}
+
+.search-bar input,
 .event-filter select {
   padding: 12px;
   border: 1px solid #ced4da;
@@ -139,10 +165,32 @@ header nav a::after {
   transition: border-color 0.3s;
 }
 
-.event-filter input:focus,
+.search-bar input:focus,
 .event-filter select:focus {
   border-color: #4CAF50;
   outline: none;
+}
+
+.search-bar input,
+.event-filter select,
+.event-filter button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.event-filter button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.event-filter button:hover {
+  background-color: #45a049;
 }
 
 /* Formulaire de réservation */
@@ -184,6 +232,32 @@ header nav a::after {
 }
 
 /* Panier */
+.cart-page button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.cart-page button:hover {
+  background-color: #45a049;
+}
+
+.cart-badge {
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 50%; /* arrondir les coins */
+  padding: 2px 5px; /* espace autour du texte */
+  font-size: 12px; /* taille du texte */
+  position: absolute; /* positionner la pastille par rapport à l'icône */
+  top: -5px; /* positionner la pastille au-dessus de l'icône */
+  right: -5px; /* positionner la pastille à droite de l'icône */
+}
+
 .cart-item {
   background-color: #fff;
   border-radius: 10px;
@@ -244,6 +318,36 @@ header nav a::after {
 .cart-item input:focus {
   border-color: #4CAF50;
   outline: none;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  height: 25px;
+  padding: 5px;
+  margin: 0px 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+}
+
+.minus, .plus {
+  color: #4CAF50;
+  cursor: pointer;
+  font-size: 25px;
+  margin: 0 6px;
+  font-weight: bold;
+}
+
+.minus:hover, .plus:hover {
+  color: #45a049;
+}
+
+.counter span:nth-child(2) {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 6px;
 }
 
 /* Animations */
@@ -307,6 +411,8 @@ header nav a::after {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  height: 150px;
+  object-fit: cover;
 }
 
 .event-detail-info {

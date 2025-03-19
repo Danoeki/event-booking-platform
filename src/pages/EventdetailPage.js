@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState, } from 'react';
 import { useParams } from 'react-router-dom';
 import EventForm from '../components/EventForm';
 import eventsData from '../data/events.json';
-import { addToCart } from '../services/localStorageService';
+import { addToCart, getCart  } from '../services/localStorageService';
 import moment from 'moment';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useNavigate } from 'react-router-dom';
 
 const EventDetailPage = () => {
+  const [cart, setCart] = useState(getCart());
+
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const event = eventsData.find(event => event.id === id);
 
   const handleBook = (formData) => {
     addToCart({ event, ...formData });
+    setCart(getCart());
     alert('Réservation effectuée avec succès!');
   };
 
@@ -19,6 +25,9 @@ const EventDetailPage = () => {
     return <div>Événement non trouvé</div>;
   }
 
+  // Vérifiez si une réservation existe déjà pour l'événement dans le panier
+  const hasReservation = cart.some(reservation => reservation.event.id === event.id);
+  
   return (
     <div className="event-detail">
       <img src={require(`../assets/${event.image}`)} alt={event.title} />
@@ -42,8 +51,23 @@ const EventDetailPage = () => {
         </div>
       </div>
       <div className="event-detail-form">
-        <h3>Réserver des billets</h3>
-        <EventForm event={event} onBook={handleBook} />
+        {hasReservation ? (
+          <div>
+            <h3>Vous avez une réservation pour cet événement</h3>
+            <button onClick={() => navigate(`/cart`)}>Voir dans le panier</button>
+          </div>
+        ) : (
+          <div>
+            {new Date(event.date) < new Date() ? (
+              <h3>Les réservations ne sont plus disponibles pour cet événement</h3>
+            ) : (
+              <div>
+                <h3>Réserver des billets</h3>
+                <EventForm event={event} onBook={handleBook} />
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

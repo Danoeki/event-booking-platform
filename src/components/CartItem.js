@@ -22,10 +22,11 @@ const CartItem = ({ item, onRemove, onUpdate }) => {
           e.stopPropagation();
           onRemove(item.event.id);
         }}>Supprimer</button>
-        <input type="number" value={item.tickets} onChange={(e) => {
-          e.stopPropagation();
-          onUpdate(item.event.id, e.target.value);
-        }} />
+        <div className="counter">
+          <span className="minus" onClick={() => item.tickets > 1 && onUpdate(item.event.id, item.tickets - 1)}>-</span>
+          <span>{item.tickets}</span>
+          <span className="plus" onClick={() => item.tickets < item.event.availableTickets && onUpdate(item.event.id, item.tickets + 1)}>+</span>
+        </div>
       </div>
     </div>
   );
